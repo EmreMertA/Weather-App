@@ -1,4 +1,4 @@
-const key = "OTG6BnF08OAzrGoaepDq32GyhOhbtD8I";
+const key = "rWToLGvBqaSSgxRBs4Mf2Wmm4hOM7zgd";
 
 const havaDurumuGetir = async (id) => {
   const temelUrl = "http://dataservice.accuweather.com/currentconditions/v1/";
@@ -13,15 +13,15 @@ const havaDurumuGetir = async (id) => {
 const sehirGetir = async (konum) => {
   const temelUrl =
     "http://dataservice.accuweather.com/locations/v1/cities/search";
+
   const sorgu = `?apikey=${key}&q=${konum}`;
   const res = await fetch(temelUrl + sorgu);
   const veri = await res.json();
 
-  console.log(veri);
   return veri[0];
 };
 
-sehirGetir("Denizli")
+/* sehirGetir("Denizli")
   .then((veri) => {
     return havaDurumuGetir(veri.Key);
   })
@@ -31,3 +31,4 @@ sehirGetir("Denizli")
   .catch((err) => {
     console.log(err);
   });
+ */
